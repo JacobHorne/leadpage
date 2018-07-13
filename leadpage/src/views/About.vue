@@ -126,6 +126,7 @@ export default {
       margin:0 auto;
       padding:1.4em;
       border-radius:3px;
+      box-shadow: 0 8px 6px -6px black;
     }
     h1{
       color:white;
