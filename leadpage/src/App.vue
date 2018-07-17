@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <img src="./assets/logo.jpg" style="max-width:130px;margin:0.8em 2em">
+      <!-- <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
   </div>
