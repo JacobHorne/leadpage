@@ -21,11 +21,11 @@
                  <div class="column">
                    <div class="control">
                     <label class="radio">
-                      <input type="radio" name="foobar">
+                      <input type="radio" name="q1">
                       YES
                     </label>
                     <label class="radio">
-                      <input type="radio" name="foobar" checked>
+                      <input type="radio" name="q1" checked>
                       NO
                     </label>
                   </div>
@@ -39,11 +39,11 @@
                  <div class="column">
                    <div class="control">
                     <label class="radio">
-                      <input type="radio" name="foobar">
+                      <input type="radio" name="q2">
                       YES
                     </label>
                     <label class="radio">
-                      <input type="radio" name="foobar" checked>
+                      <input type="radio" name="q2">
                       NO
                     </label>
                   </div>
@@ -57,11 +57,11 @@
                  <div class="column">
                    <div class="control">
                     <label class="radio">
-                      <input type="radio" name="foobar">
+                      <input type="radio" name="q3">
                       YES
                     </label>
                     <label class="radio">
-                      <input type="radio" name="foobar" checked>
+                      <input type="radio" name="q3">
                       NO
                     </label>
                   </div>
@@ -75,11 +75,11 @@
                  <div class="column">
                    <div class="control">
                     <label class="radio">
-                      <input type="radio" name="foobar">
+                      <input type="radio" name="q4">
                       YES
                     </label>
                     <label class="radio">
-                      <input type="radio" name="foobar" checked>
+                      <input type="radio" name="q4" checked>
                       NO
                     </label>
                   </div>
@@ -93,21 +93,19 @@
                  <div class="column">
                    <div class="control">
                     <label class="radio">
-                      <input type="radio" name="foobar">
+                      <input type="radio" name="q5">
                       YES
                     </label>
                     <label class="radio">
-                      <input type="radio" name="foobar" checked>
+                      <input type="radio" name="q5" checked>
                       NO
                     </label>
                   </div>
                  </div>
                </div>
                <div class="field">
-                <div class="field-label is-normal">
                   <label class="label">Describe Your Disability</label>
-                </div>
-                <div class="field-body">
+                  <div class="field-body">
                   <div class="field">
                     <div class="control">
                       <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
@@ -206,8 +204,7 @@ export default {
     .radio{
       margin-right: 15px;
     }
-    .label{
+    .field{
       color:#565151;
-      text-align:left;
     }
 </style>

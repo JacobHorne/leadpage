@@ -205,10 +205,10 @@ export default {
       text-align: center;
     }
     h4{
-      font-weight: 300;
+      font-weight: 300 !important;
     }
     input,select{
-      background:whitesmoke;
+      background:whitesmoke !important;
     }
     .radio{
       margin-right: 15px;
