@@ -1,16 +1,17 @@
 <template>
   <div>
     <div class="hero">
-      <div class="hero-title">
-        <h1 class="title is-1">Disability Benefits Heading</h1>
-        <h4 class="title is-4">This is A Subtitle</h4>
-      </div>
       <div class="columns">
         <div class="column">
-           <div class="form-wrapper">
+          <div class="hero-title">
+            <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
+            <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4>
+          </div>
+          
+          <div class="form-wrapper">
             <!--Name-->
             <div class="field">
-              <label class="label">Name</label>
+             <h3 class="title is-4">Contact Information</h3>
               <div class="field-body">
                 <div class="field">
                   <p class="control is-expanded has-icons-left has-icons-right">
@@ -39,9 +40,9 @@
 
             <!--Email-->
             <div class="field">
-                <label class="label">Email</label>
+                <!-- <label class="label">Email</label> -->
                 <p class="control is-expanded has-icons-left has-icons-right">
-                  <input class="input is-medium is-success" type="email" placeholder="Email" value="alex@smith.com">
+                  <input class="input is-medium" type="email" placeholder="Email" value="">
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -55,7 +56,7 @@
             <div class="field">
                 <label class="label">Address</label>
                 <p class="control has-icons-left has-icons-right">
-                  <input class="input is-medium is-success" type="text" placeholder="Address" value="">
+                  <input class="input is-medium" type="text" placeholder="Address" value="">
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -65,39 +66,49 @@
                 </p>
             </div>
             <div class="field is-grouped">
-                <p class="control has-icons-left">
+                <p class="control">
                   <span class="select">
-                    <select class="is-medium">
+                    <select class="is-medium is-expanded" style="font-size:1.2em;">
                       <option selected>Choose A State</option>
                       <option>Select dropdown</option>
                       <option>With options</option>
                     </select>
                   </span>
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-globe"></i>
-                  </span>
                 </p>
-                <p class="control has-icons-left is-expanded has-icons-right">
-                  <input class="input is-medium is-success" type="text" placeholder="Zipcode" value="">
-                  <span class="icon is-small is-left">
+                <p class="control is-expanded has-icons-right">
+                  <input class="input is-medium" type="text" placeholder="Zipcode" value="">
+                  <!-- <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                  </span>
+                  </span> -->
                 </p>
           </div>
           <div class="field">
-            <label class="label is-expanded">Age Range (choose one)</label>
-            <div class="buttons">
-              <span class="button is-medium">22-30</span>
-              <span class="button is-medium">30-45</span>
-              <span class="button is-medium">45-60</span>
-              <span class="button is-medium">45-60</span>
+            <label class="label">Age Group</label>
+            <div class="field-body radio-button-container">
+              <div class="field is-narrow">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="member">
+                    18-30
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="member">
+                    31-40
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="member">
+                    41-50
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="member">
+                    50+
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
           <div class="field">
-            <label>Phone</label>
+            <label class="label">Phone Number</label>
             <div class="field-body">
               <div class="field is-expanded">
                 <div class="field has-addons">
@@ -114,17 +125,19 @@
               </div>
             </div>
           </div>
+          <!-- <router-link to="/step2" class="button is-large is-fullwidth" tag="button">foo</router-link> -->
+          <router-link to="/step2" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;background:#11b725;color:white;font-weight:600;">Send Information</router-link>
+        
         </div><!--end of form containter-->
         </div>
-        <div class="column">
+        <div class="column is-hidden-mobile">
           <div class="people-container">
                 <img src="../assets/face.png">
           </div>
         </div>
       </div>
     </div><!--This is end of HEro-->
-    <div class="feature">
-
+    <div class="feature is-hidden-mobile">
     </div>
   </div>
 </template>
@@ -132,14 +145,14 @@
 // @ is an alias to /src
 
 export default {
-  name: 'home',
+  name: 'step1',
 }
 </script>
 
-<style scoped lang="scss">
-    .field:not(:last-child){
-      margin-bottom: 2em;
-    }
+<style lang="scss">
+    // .field:not(:last-child){
+    //    margin-bottom: 1.1em;
+    // }
     .hero{
       width:100%;
       height:400px;
@@ -156,20 +169,34 @@ export default {
       // background-size:cover;
     }
     .hero-title{
-      width:100%;
-      margin:1em auto;
+      width:90%;
+      margin:3em auto;
     }
+    // .hero-title > h1{
+    //   text-align:left;
+    // }
+    //  .hero-title > h4{
+    //   text-align:left;
+    // }
     .feature{
-      background:slategray;
-      height:400px;
+      background:#0384CA;
+      height:450px;
+    }
+    .radio-button-container{
+      border: 1px solid lightgrey;
+      padding: 1em 0.4em;
+      background:whitesmoke;
+      border-radius:4px;
     }
     .form-wrapper{
       background:white;
       width:95%;
       margin:0 auto;
-      padding:1.4em;
+      padding:2em 1.5em;
       border-radius:3px;
-      box-shadow:1px 15px 20px 0 grey;
+      box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+      border-radius: 0.375rem;
+      transition: all 0.3s ease;
     }
     h1,h4{
       color:#442d2d;
@@ -179,5 +206,14 @@ export default {
     }
     h4{
       font-weight: 300;
+    }
+    input,select{
+      background:whitesmoke;
+    }
+    .radio{
+      margin-right: 15px;
+    }
+    .label{
+      color:#565151
     }
 </style>
