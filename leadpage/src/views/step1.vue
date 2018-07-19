@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div id="step1">
     <div class="hero">
       <div class="columns">
         <div class="column">
-          <div class="hero-title">
-            <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
-            <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4>
+          <div class="hero-title is-hidden-tablet">
+            <h1 class="title is-1">A Disability Keeping You From working?</h1>
+            <h4 class="title is-5">Get A <span>Free Evaluation</span> and Get The Benefits You Deserve!</h4>
           </div>
           
           <div class="form-wrapper">
@@ -126,19 +126,109 @@
             </div>
           </div>
           <!-- <router-link to="/step2" class="button is-large is-fullwidth" tag="button">foo</router-link> -->
-          <router-link to="/step2" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;background:#11b725;color:white;font-weight:600;">Send Information</router-link>
+          <router-link to="/step2" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;background:#d82377;;color:white;font-weight:600;">Send Information</router-link>
         
         </div><!--end of form containter-->
         </div>
         <div class="column is-hidden-mobile">
           <div class="people-container">
-                <img src="../assets/face.png">
+            <div class="hero-title">
+              <h1 class="title is-2">Disability Keeping You From working?</h1>
+              <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4>
+            </div>
+            <img src="../assets/face-hero.jpg">
           </div>
         </div>
       </div>
     </div><!--This is end of HEro-->
-    <div class="feature is-hidden-mobile">
+    
+
+
+    <section class="section features">
+      <div class="feature-title">
+            <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
+            <!-- <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4> -->
+          </div>
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="../assets/feature2.jpg" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Feature</p>
+      </div>
     </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="column">
+         <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="../assets/feature3.jpg" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      
+      <div class="media-content">
+        <p class="title is-4">Feature</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="column">
+         <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="../assets/feature1.jpg" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Feature</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+    <section class="section disclaimer">
+      <p>This website is owned and operated by Spartus Disability Network (spartus.com). This website is owned and This 
+        website is owned and operated by Spartus (spartus.com). operated by American Disability Network (spartus.com). By registering for. © 2018 spartus.com</p>
+    </section>
   </div>
 </template>
 <script>
@@ -153,10 +243,14 @@ export default {
     // .field:not(:last-child){
     //    margin-bottom: 1.1em;
     // }
+    #step1{
+      max-width:1600px;
+      margin:0 auto;
+    }
+    
     .hero{
-      width:100%;
-      height:400px;
-      background:whitesmoke;
+      // background:background-color: #fdfdfd;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
       // * top, transparent red, faked with gradient */ 
       // linear-gradient(
       //   rgba(41, 128, 228, 0.9), 
@@ -171,6 +265,9 @@ export default {
     .hero-title{
       width:90%;
       margin:3em auto;
+      span{
+        font-weight: 900;
+      }
     }
     // .hero-title > h1{
     //   text-align:left;
@@ -178,9 +275,8 @@ export default {
     //  .hero-title > h4{
     //   text-align:left;
     // }
-    .feature{
+    .features{
       background:#0384CA;
-      height:450px;
     }
     .radio-button-container{
       border: 1px solid lightgrey;
@@ -191,7 +287,8 @@ export default {
     .form-wrapper{
       background:white;
       width:95%;
-      margin:0 auto;
+      margin:4em auto;
+      max-width:600px;
       padding:2em 1.5em;
       border-radius:3px;
       box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
@@ -215,5 +312,35 @@ export default {
     }
     .label{
       color:#565151
+    }
+    .features{
+      .column{
+        padding:0.8em;
+        margin:2em 2em;
+        box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+        background:white;
+        border-radius:4px;
+      }
+      h1{
+        color:white;
+        margin:0 0 2em 0 !important;
+      }
+      h3{
+        font-size:1.5em;
+        font-weight: 600;
+        margin:1em 0;
+      }
+      p{
+        opacity:0.9;
+        line-height:27px;
+      }
+    }
+    .disclaimer{
+      p{
+        font-size:0.8em;
+        opacity:0.9;
+        width:90%;
+        margin:0 auto;
+      }
     }
 </style>
