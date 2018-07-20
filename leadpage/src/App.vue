@@ -19,12 +19,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  /* max-width:1400px; */
   margin:0 auto;
 }
 #nav {
   z-index: 100;
   padding:1em 2em;
+  margin-bottom:30px;
   box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
 }
 #nav a {

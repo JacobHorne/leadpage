@@ -1,6 +1,6 @@
 <template>
-  <div id="step2">
-    <div class="hero">
+  <div id="step2" style="max-width:1600px;margin:0 auto;">
+    <div class="is-fluid dot-background">
       
       <div class="columns">
         <div class="column">
@@ -32,7 +32,7 @@
                  </div>
                </div>
 
-                <div class="columns">
+                <!-- <div class="columns">
                  <div class="column is-three-fifths">
                    <p>Since 2008 have you worked at least 5 years?</p>
                  </div>
@@ -48,7 +48,7 @@
                     </label>
                   </div>
                  </div>
-               </div>
+               </div> -->
 
                 <div class="columns">
                  <div class="column is-three-fifths">
@@ -229,17 +229,14 @@ export default {
 }
 </script>
 
-<style  lang="scss" src="bulma">
+<style lang="scss">
     // .field:not(:last-child){
     //    margin-bottom: 1.1em;
     // }
      #step2{
-      max-width:1600px;
-      margin:0 auto;
+      
     }
-    .hero{
-      width:100%;
-      height:400px;
+    .dot-background{
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
       // * top, transparent red, faked with gradient */ 
       // linear-gradient(
@@ -261,7 +258,6 @@ export default {
       height:450px;
     }
     .radio-button-container{
-      border: 1px solid lightgrey;
       padding: 1em 0.4em;
       background:whitesmoke;
       border-radius:4px;
@@ -269,7 +265,7 @@ export default {
     .form-wrapper{
       background:white;
       width:95%;
-      margin:0 auto;
+      margin:2em auto;
       padding:2em 1.5em;
       border-radius:3px;
       box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
@@ -280,7 +276,7 @@ export default {
       font-weight:bold;
     }
     #question-container{
-      border:1px solid lightgrey;
+      border:1px solid whitesmoke;
       padding:1.4em;
       border-radius:4px;
       p{

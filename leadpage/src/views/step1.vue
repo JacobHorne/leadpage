@@ -1,13 +1,12 @@
 <template>
   <div id="step1">
-    <div class="hero">
+    <div class="is-fluid dot-background">
       <div class="columns">
         <div class="column">
           <div class="hero-title is-hidden-tablet">
-            <h1 class="title is-1">A Disability Keeping You From working?</h1>
+            <h1 class="title is-2">A Disability Keeping You From working?</h1>
             <h4 class="title is-5">Get A <span>Free Evaluation</span> and Get The Benefits You Deserve!</h4>
           </div>
-          
           <div class="form-wrapper">
             <!--Name-->
             <div class="field">
@@ -248,7 +247,7 @@ export default {
       margin:0 auto;
     }
     
-    .hero{
+    .dot-background{
       // background:background-color: #fdfdfd;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
       // * top, transparent red, faked with gradient */ 
@@ -315,7 +314,7 @@ export default {
     }
     .features{
       .column{
-        padding:0.8em;
+        padding:1em;
         margin:2em 2em;
         box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
         background:white;
