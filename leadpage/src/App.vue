@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img src="./assets/logo.jpg" style="max-width:160px;">
-      <!-- <router-link to="/">Step1</router-link>
-      <router-link to="/step2">Step2</router-link> -->
+      <img @click="home()" src="./assets/logo.jpg" style="max-width:160px;">
+      <router-link to="/Security" style="margin:0 20px">Security</router-link>
+      <router-link to="/Medicare">Medicare Plans</router-link>
     </div>
     <router-view/>
     <footer>
@@ -46,3 +46,12 @@ footer a{
   font-weight: 600;
 }
 </style>
+<script>
+  export default {
+  methods: {
+    home() {
+      this.$router.push('/')
+    }
+  }
+}
+</script>
