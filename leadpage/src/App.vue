@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <img @click="home()" src="./assets/logo.jpg" style="max-width:160px;">
-      <router-link to="/Security" style="margin:0 20px">Security</router-link>
-      <router-link to="/Medicare">Medicare Plans</router-link>
+    <div id="nav" style="position:absolute;">
+      <img @click="home()" src="./assets/spartus-white.png" style="max-width:160px;">
+      <router-link to="/Security" style="margin:0 20px;color:white;">Security</router-link>
+      <router-link to="/Medicare" style="margin:0 20px;color:white;">Medicare Plans</router-link>
     </div>
     <router-view/>
     <footer>
@@ -20,11 +20,11 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin:0 auto;
+  /* background:black; */
 }
 #nav {
   z-index: 100;
   padding:1em 2em;
-  margin-bottom:30px;
   box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
 }
 #nav a {

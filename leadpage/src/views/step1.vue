@@ -1,16 +1,14 @@
 <template>
   <div id="step1">
-    <div class="is-fluid dot-background">
-      <div class="columns">
-        <div class="column">
-          <div class="hero-title is-hidden-tablet">
-            <h1 class="title is-2">A Disability Keeping You From working?</h1>
-            <h4 class="title is-5">Get A <span>Free Evaluation</span> and Get The Benefits You Deserve!</h4>
-          </div>
-          <div class="form-wrapper">
+    
+    <div class="background" style="min-height:600px;position:relative;">
+        <h1 class="title is-2">This is Today</h1>
+        
+        <div class="form-float" style="min-height:500px;position:absolute;">
+            <div class="form-wrapper" style="background:dark;">
             <!--Name-->
             <div class="field">
-             <h3 class="title is-4">Contact Information</h3>
+             <!-- <h3 class="title is-4">Contact Information</h3> -->
               <div class="field-body">
                 <div class="field">
                   <p class="control is-expanded has-icons-left has-icons-right">
@@ -50,27 +48,14 @@
                   </span>
                 </p>
             </div>
-
-            <!--Location-->
-            <div class="field">
-                <label class="label">Address</label>
-                <p class="control has-icons-left has-icons-right">
-                  <input class="input is-medium" type="text" placeholder="Address" value="">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                  </span>
-                </p>
-            </div>
             <div class="field is-grouped">
                 <p class="control">
                   <span class="select">
                     <select class="is-medium is-expanded" style="font-size:1.2em;">
                       <option selected>Choose A State</option>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
+                      <option v-for="option in options" v-bind:value="option.value">
+                        {{ option.text }}
+                      </option>
                     </select>
                   </span>
                 </p>
@@ -125,21 +110,11 @@
             </div>
           </div>
           <!-- <router-link to="/step2" class="button is-large is-fullwidth" tag="button">foo</router-link> -->
-          <router-link to="/step2" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;background:#d82377;;color:white;font-weight:600;">Send Information</router-link>
+          <router-link to="/step2" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;border:none;background:seagreen;color:white;font-weight:600;">Send Information</router-link>
         
         </div><!--end of form containter-->
-        </div>
-        <div class="column is-hidden-mobile">
-          <div class="people-container">
-            <div class="hero-title">
-              <h1 class="title is-2">Disability Keeping You From working?</h1>
-              <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4>
-            </div>
-            <img src="../assets/face-hero.jpg">
-          </div>
-        </div>
       </div>
-    </div><!--This is end of HEro-->
+    </div>
     
 
 
@@ -238,10 +213,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
-    // .field:not(:last-child){
-    //    margin-bottom: 1.1em;
-    // }
+<style lang="scss" scoped>
+    .background{
+      background: url(../assets/grandparents.jpg);
+      padding:2em 3em;
+    }
     #step1{
       max-width:1600px;
       margin:0 auto;
@@ -249,7 +225,8 @@ export default {
     
     .dot-background{
       // background:background-color: #fdfdfd;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+      // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+      
       // * top, transparent red, faked with gradient */ 
       // linear-gradient(
       //   rgba(41, 128, 228, 0.9), 
@@ -263,17 +240,11 @@ export default {
     }
     .hero-title{
       width:90%;
-      margin:3em auto;
+      margin:1em auto;
       span{
         font-weight: 900;
       }
     }
-    // .hero-title > h1{
-    //   text-align:left;
-    // }
-    //  .hero-title > h4{
-    //   text-align:left;
-    // }
     .features{
       background:#0384CA;
     }

@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     // .field:not(:last-child){
     //    margin-bottom: 1.1em;
     // }
