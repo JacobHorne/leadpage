@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav" style="position:absolute;">
       <img @click="home()" src="./assets/spartus-white.png" style="max-width:160px;">
-      <router-link to="/Security" style="margin:0 20px;color:white;">Security</router-link>
-      <router-link to="/Medicare" style="margin:0 20px;color:white;">Medicare Plans</router-link>
+      <!-- <router-link to="/Security" style="margin:0 20px;color:white;">Security</router-link>
+      <router-link to="/Medicare" style="margin:0 20px;color:white;">Medicare Plans</router-link> -->
     </div>
     <router-view/>
     <footer>
