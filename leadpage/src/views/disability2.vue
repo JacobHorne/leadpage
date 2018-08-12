@@ -6,7 +6,7 @@
         <div class="column">
 
           <div class="hero-title is-hidden-tablet">
-            <h1 class="title is-2">A Disability Keeping You From working?</h1>
+            <!--<h1 class="title is-2">A Disability Keeping You From working?</h1>-->
             <h4 class="title is-4">Get A <span>Free Evaluation</span> and Get The Benefits You Deserve!</h4>
           </div>
 

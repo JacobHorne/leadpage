@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <div id="nav" style="position:absolute;">
-      <img @click="home()" src="./assets/spartus-white.png" style="max-width:160px;">
+      <img @click="home()" src="./assets/spartus-white.png" style="max-width:130px;">
       <!-- <router-link to="/Security" style="margin:0 20px;color:white;">Security</router-link>
       <router-link to="/Medicare" style="margin:0 20px;color:white;">Medicare Plans</router-link> -->
     </div>
     <router-view/>
     <footer>
       <router-link to="/">Privacy Policy</router-link>
-      <router-link to="/step2">Disclaimer</router-link>
+      <router-link to="/disability">Disclaimer</router-link>
     </footer>
   </div>
 </template>
