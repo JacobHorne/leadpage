@@ -221,7 +221,7 @@
           .catch(function (error) {
             console.log(error);
           });
-        // this.$router.push('disability2');
+        this.$router.push('disability2');
       },
     },
   }
@@ -242,7 +242,7 @@
     }
     .background{
       // background: url(../assets/grandparents.jpg);
-      background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.3)),url(../assets/grandparents.jpg);
+      background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.15)),url(../assets/grandparents.jpg);
       // background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
       padding:2em 3em;
       min-height:800px;

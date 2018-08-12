@@ -243,7 +243,7 @@
       opacity:1;
     }
     .background{
-      background: url(../assets/hero.jpg);
+      background: url(../assets/security.jpg);
       background-position: center;
       background-size: contain;
       padding:2em 3em;
