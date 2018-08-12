@@ -1,11 +1,11 @@
 <template>
   <div id="step1">
     <div class="background">
-      <h1 class="hero-title is-size-3-mobile is-size-2-tablet">Our Experts Will Connect You With The Help You Deserve.</h1>
+      <h1 class="hero-title is-size-3-mobile is-size-2-tablet is-size-1-desktop">Our Disability Experts Will Connect You With The Help You Deserve.</h1>
         <div class="form-wrapper">
         <!--Name-->
         <div class="field">
-         <h3 class="form-title is-size-5-mobile is-size-4-tablet">Please Enter Contact Details</h3>
+         <h3 class="form-title is-size-5-mobile is-size-4-tablet">Contact Information</h3>
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left has-icons-right">
@@ -67,7 +67,7 @@
                     </a>
                   </p>
                   <p class="control is-expanded">
-                    <input class="input is-medium" type="tel" placeholder="Your phone number">
+                    <input class="input is-medium" type="tel" v-model="userData.phoneNumber" placeholder="Your phone number">
                   </p>
                 </div>
                 <!-- <p class="help">Do not enter the first zero</p> -->
@@ -80,26 +80,26 @@
               <div class="field is-narrow">
                 <div class="control">
                   <label class="radio">
-                    <input type="radio" name="member">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange"> 
                     18-30
                   </label>
                   <label class="radio">
-                    <input type="radio" name="member">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
                     31-40
                   </label>
                   <label class="radio">
-                    <input type="radio" name="member">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
                     41-50
                   </label>
                   <label class="radio">
-                    <input type="radio" name="member">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
                     50+
                   </label>
                 </div>
               </div>
             </div>
           </div>
-          <router-link to="/step2" tag="button" class="button is-large is-fullwidth submit">Send Information</router-link>
+          <div to="/step2" tag="button" @click="sendUserData();" class="button is-large is-fullwidth submit">Send Information</div>
           <p>By clicking Send Information, I authorize sing Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
              'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum 
              as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions 
@@ -111,10 +111,8 @@
 
 
     <section class="section features">
-      <div class="feature-title">
-            <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
+       <h1 class="section-title is-size-3-mobile is-size-2-tablet is-size-1-desktop">Our Disability Experts Will Connect You With The Help You Deserve.</h1>
             <!-- <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4> -->
-          </div>
       <div class="columns">
         <div class="column">
           <div class="card">
@@ -131,10 +129,8 @@
         </div>
       <div class="content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#">#css</a> <a href="#">#responsive</a>
+        Phasellus nec iaculis mauris
         <br>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </div>
       </div>
     </div>
@@ -156,10 +152,9 @@
 
     <div class="content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
+      Phasellus nec iaculis mauris.
+     
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
 </div>
@@ -180,10 +175,8 @@
 
     <div class="content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
+      Phasellus nec iaculis mauris
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
 </div>
@@ -197,8 +190,8 @@
   </div>
 </template>
 
-
 <script>
+  import axios from 'axios'
   export default {
     name: 'Header',
     data () {
@@ -208,20 +201,33 @@
           firstName:'',
           lastName:'',
           email:'',
-          phone:'',
+          phoneNumber:'',
+          city:'',
+          state:'',
           zipCode:'',
           ageRange:''
         }
       }
-
-    }
+    }, 
+    methods: {
+      sendUserData(){
+        let that = this;
+        axios.get(`http://api.zippopotam.us/us/${this.userData.zipCode}`)
+           .then(function (response) {
+            that.userData.city = response.data.places[0]["place name"];
+            that.userData.state = response.data.places[0]["state"];
+            alert(`${that.userData.firstName} ${that.userData.firstName} ${that.userData.email} ${that.userData.phoneNumber} ${that.userData.zipCode} ${that.userData.city} ${that.userData.state}`);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        // this.$router.push('disability2');
+      },
+    },
   }
 </script>
 
 <style lang="scss" scoped>
-    // .icon{
-    //   background-color:seagreen;
-    // }
     .submit{
       margin:1em auto;
       border:none;
@@ -235,8 +241,8 @@
       opacity:1;
     }
     .background{
-      background: url(../assets/grandparents.jpg);
-      //  background:linear-gradient(rgba(250, 249, 250, 0.1),rgba(30, 198, 167, 0.1)),url(../assets/grandparents.jpg);
+      // background: url(../assets/grandparents.jpg);
+      background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.3)),url(../assets/grandparents.jpg);
       // background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
       padding:2em 3em;
       min-height:800px;
@@ -245,11 +251,10 @@
     }
     .hero-title{
       color:white;
-      background:rgba(0,0,0,0.1);
       max-width:800px;
       font-weight: 600;
       width:90%;
-      margin: 1.2em auto;
+      margin: 1em auto;
     }
     .form-title{
       color:white;
@@ -263,9 +268,9 @@
     }
     .form-wrapper{
       width:97%;
-      background:#38487b;
+      background:#131f46;
       max-width: 500px;
-      padding: 1em 1.5em;
+      padding: 1.2em 1.5em 2.5em 1.2em;
       border-radius:3px;
       position:absolute;
       left:1.5%;
@@ -286,16 +291,21 @@
       color:white;
     }
     .features{
+      background:white;
+      padding:14em 0 0 0;
+      .section-title{
+        color:#131f46;
+        margin:1.5em auto;
+        text-align:center;
+        font-weight: 600;
+        max-width: 900px;
+      }
       .column{
         padding:1em;
         margin:2em 2em;
         box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
         background:white;
         border-radius:4px;
-      }
-      h1{
-        color:white;
-        margin:0 0 2em 0 !important;
       }
       h3{
         font-size:1.5em;
@@ -316,15 +326,23 @@
         margin:0 auto;
       }
     }
+    .card{
+      -webkit-box-shadow:none;
+      box-shadow: none;
+    }
+    
 @media only screen and (min-width: 700px) {
     .form-wrapper{
       margin-left:20%;
     }
     .hero-title{
-      max-width:700px;
+      max-width:500px;
       width:60%;
     }
-    
+    .features{
+      background:white;
+      padding:14em 0 0 0;
+    }
 }
 @media only screen and (min-width: 1000px) {
   .form-wrapper{
@@ -333,12 +351,27 @@
   .hero-title{
       color:white;
       position:absolute;
+      left:560px;
+      top:50px;
+      background:none;
+      text-align:left;
+      max-width: 550px;
+    }
+    .features{
+      background:white;
+      padding:0 0 0 0;
+    }
+}
+@media only screen and (min-width: 1300px) {
+  .form-wrapper{
+    margin:4em 0;
+  }
+  .hero-title{
+      color:white;
       left:600px;
       top:50px;
-      background:rgba(0,0,0,0.15);
       text-align:left;
-      padding:0.5em;
-      max-width: 700px;
+      max-width: 650px;
     }
 }
 </style>

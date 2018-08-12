@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav" style="position:absolute;">
-      <img @click="home()" src="./assets/spartus-white.png" style="max-width:130px;">
+      <img @click="home()" class="logo" src="./assets/spartus-white.png">
       <!-- <router-link to="/Security" style="margin:0 20px;color:white;">Security</router-link>
       <router-link to="/Medicare" style="margin:0 20px;color:white;">Medicare Plans</router-link> -->
     </div>
@@ -21,6 +21,9 @@
   color: #2c3e50;
   margin:0 auto;
   /* background:black; */
+}
+.logo{
+  max-width:130px;
 }
 #nav {
   z-index: 100;
@@ -44,6 +47,16 @@ footer a{
   color:white;
   margin-right:10px;
   font-weight: 600;
+}
+@media only screen and (min-width: 700px) {
+  .logo{
+    max-width:150px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .logo{
+    max-width:180px;
+  }
 }
 </style>
 <script>

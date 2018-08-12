@@ -1,154 +1,150 @@
 <template>
-  <div id="step2" style="max-width:1600px;margin:0 auto;">
-    <div class="is-fluid dot-background">
-      
-      <div class="columns">
-        <div class="column">
-
-          <div class="hero-title is-hidden-tablet">
-            <!--<h1 class="title is-2">A Disability Keeping You From working?</h1>-->
-            <h4 class="title is-4">Get A <span>Free Evaluation</span> and Get The Benefits You Deserve!</h4>
+  <div id="step1">
+    <div class="background">
+      <h1 class="hero-title is-size-3-mobile is-size-2-tablet is-size-1-desktop">This would be page 2</h1>
+        <div class="form-wrapper">
+        <!--Name-->
+        <div class="field">
+         <h3 class="form-title is-size-5-mobile is-size-4-tablet">Contact Information</h3>
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded has-icons-left has-icons-right">
+                <input class="input is-medium" v-model="userData.firstName" type="text" placeholder="First Name">
+                <span class="icon is-small is-left ">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </p>
+            </div>
+             <div class="field is-expanded is-grouped">
+              <p class="control is-expanded has-icons-left has-icons-right">
+                <input class="input is-medium" v-model="userData.lastName" type="text" placeholder="Last Name">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </p>
+            </div>
           </div>
-
-          <div class="form-wrapper">
-            <h3 class="title is-4">Qualification Questions</h3>
-            <div class="field" id="question-container">
-              
-               <div class="columns">
-                 <div class="column is-three-fifths">
-                   <p>Do you expect to be out of work for at least a year?</p>
-                 </div>
-                 <div class="column">
-                   <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="q1">
-                      YES
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="q1" checked>
-                      NO
-                    </label>
-                  </div>
-                 </div>
-               </div>
-
-                <!-- <div class="columns">
-                 <div class="column is-three-fifths">
-                   <p>Since 2008 have you worked at least 5 years?</p>
-                 </div>
-                 <div class="column">
-                   <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="q2">
-                      YES
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="q2">
-                      NO
-                    </label>
-                  </div>
-                 </div>
-               </div> -->
-
-                <div class="columns">
-                 <div class="column is-three-fifths">
-                   <p>Are you currently receiving Social Security Disability benefits?</p>
-                 </div>
-                 <div class="column">
-                   <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="q3">
-                      YES
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="q3">
-                      NO
-                    </label>
-                  </div>
-                 </div>
-               </div>
-
-                <div class="columns">
-                 <div class="column is-three-fifths">
-                   <p>Is an attorney helping you with your case?</p>
-                 </div>
-                 <div class="column">
-                   <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="q4">
-                      YES
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="q4" checked>
-                      NO
-                    </label>
-                  </div>
-                 </div>
-               </div>
-
-                <div class="columns">
-                 <div class="column is-three-fifths">
-                   <p>Are you receiving treatment from a Doctor?</p>
-                 </div>
-                 <div class="column">
-                   <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="q5">
-                      YES
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="q5" checked>
-                      NO
-                    </label>
-                  </div>
-                 </div>
-               </div>
-               <div class="field">
-                  <label class="label">Describe Your Disability</label>
-                  <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
-                    </div>
-                  </div>
+        </div>
+        <!--Email-->
+        <div class="field">
+            <!-- <label class="label">Email</label> -->
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-medium" v-model="userData.email" type="email" placeholder="Email">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+        </div>
+        <div class="field">
+            <!-- <label class="label">Email</label> -->
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-medium" v-model="userData.zipCode" type="email" placeholder="Zipcode">
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+        </div>
+        <div class="field">
+            <!-- <label class="label">Phone Number</label> -->
+            <div class="field-body">
+              <div class="field is-expanded">
+                <div class="field has-addons">
+                  <p class="control">
+                    <a class="button is-static is-medium">
+                      +1
+                    </a>
+                  </p>
+                  <p class="control is-expanded">
+                    <input class="input is-medium" type="tel" v-model="userData.phoneNumber" placeholder="Your phone number">
+                  </p>
+                </div>
+                <!-- <p class="help">Do not enter the first zero</p> -->
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Age Group</label>
+            <div class="field-body radio-button-container">
+              <div class="field is-narrow">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange"> 
+                    18-30
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
+                    31-40
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
+                    41-50
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="ageRange" v-model="userData.ageRange">
+                    50+
+                  </label>
                 </div>
               </div>
             </div>
-            
-
-          <router-link to="/" tag="button" class="button is-large is-fullwidth" style="margin-top:1.5em;background:#d82377;;color:white;font-weight:600;">Send Information</router-link>
-          </div><!--end of form containter-->
-        </div>
-        <div class="column is-hidden-mobile">
-          <div class="people-container">
-                 <div class="hero-title">
-                  <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
-                  <h4 class="title is-4">Get A Free Evaluation and Get The Benefits You Deserve!</h4>
-                </div>
-                <img src="../assets/face-hero.jpg">
           </div>
-        </div>
-      </div><!--End of Columns-->
-    </div><!--This is end of HEro-->
-
-
+          <div to="/step2" tag="button" @click="sendUserData();" class="button is-large is-fullwidth submit">Send Information</div>
+          <p>By clicking Send Information, I authorize sing Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+             'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum 
+             as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions 
+             have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div><!--end of form container-->
+      </div><!--end of of background container-->
+  
+    
 
 
     <section class="section features">
-      <div class="feature-title">
-            <h1 class="title is-2">Is A Disability Keeping You From working?</h1>
+       <h1 class="section-title is-size-3-mobile is-size-2-tablet is-size-1-desktop">Our Disability Experts Will Connect You With The Help You Deserve.</h1>
             <!-- <h4 class="title is-5">Get A Free Evaluation and Get The Benefits You Deserve!</h4> -->
-          </div>
       <div class="columns">
         <div class="column">
           <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="../assets/feature2.jpg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">Feature</p>
+          </div>
+        </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris
+        <br>
+        </div>
+      </div>
+    </div>
+        </div>
+        <div class="column">
+         <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="../assets/feature2.jpg" alt="Placeholder image">
+      <img src="../assets/feature3.jpg" alt="Placeholder image">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
+      
       <div class="media-content">
         <p class="title is-4">Feature</p>
       </div>
@@ -156,10 +152,9 @@
 
     <div class="content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
+      Phasellus nec iaculis mauris.
+     
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
 </div>
@@ -173,7 +168,6 @@
   </div>
   <div class="card-content">
     <div class="media">
-      
       <div class="media-content">
         <p class="title is-4">Feature</p>
       </div>
@@ -181,34 +175,8 @@
 
     <div class="content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
+      Phasellus nec iaculis mauris
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-</div>
-        </div>
-        <div class="column">
-         <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="../assets/feature3.jpg" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">Feature</p>
-      </div>
-    </div>
-
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
 </div>
@@ -216,46 +184,85 @@
       </div>
     </section>
     <section class="section disclaimer">
-      <p>This website is owned and operated by Spartus Disability Network (spartus.com). This website is owned and This website is owned and operated by Spartus (spartus.com). operated by American Disability Network (spartus.com). By registering for.
-© 2018 spartus.com</p>
+      <p>This website is owned and operated by Spartus Disability Network (spartus.com). This website is owned and This 
+        website is owned and operated by Spartus (spartus.com). operated by American Disability Network (spartus.com). By registering for. © 2018 spartus.com</p>
     </section>
   </div>
 </template>
-<script>
-// @ is an alias to /src
 
-export default {
-  name: 'step2',
-}
+<script>
+  import axios from 'axios'
+  export default {
+    name: 'Header',
+    data () {
+      return {
+        // options:['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'],
+        userData:{
+          firstName:'',
+          lastName:'',
+          email:'',
+          phoneNumber:'',
+          city:'',
+          state:'',
+          zipCode:'',
+          ageRange:''
+        }
+      }
+    }, 
+    methods: {
+      sendUserData(){
+        axios.get(`http://api.zippopotam.us/us/${this.userData.zipCode}`)
+           .then(function (response) {
+            console.log(response.data);
+            let locationData = response.data;
+            console.log(locationData.places[0]["place name"])
+            // this.userData.city = locationData.places[0]["place name"];
+            // this.userData.state = locationData.places[0]["state"];
+            alert(`${this.userData.firstName} ${this.userData.firstName} ${this.userData.email} ${this.userData.phoneNumber} ${this.userData.zipCode} ${this.userData.city} ${this.userData.state}`);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        this.$router.push('disability2');
+      },
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
-    // .field:not(:last-child){
-    //    margin-bottom: 1.1em;
-    // }
-     #step2{
-      
+    .submit{
+      margin:1em auto;
+      border:none;
+      background:#32cc75;
+      color:white;
+      font-weight:600;
     }
-    .dot-background{
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%234e4b52' fill-opacity='0.19' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-      // * top, transparent red, faked with gradient */ 
-      // linear-gradient(
-      //   rgba(41, 128, 228, 0.9), 
-      //    rgba(19, 18, 18, 0.1)
-      // ),
-
-      // url('../assets/disability.jpg');
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // background-size:cover;
+    .input{
+      box-shadow:none;
+      background: white !important;
+      opacity:1;
+    }
+    .background{
+      background: url(../assets/hero.jpg);
+      background-position: center;
+      background-size: contain;
+      padding:2em 3em;
+      min-height:800px;
+      position:relative;
+      padding:3em 0;
+      background-repeat:no-repeat;
     }
     .hero-title{
+      color:#2d2d2d;
+      max-width:800px;
+      font-weight: 600;
       width:90%;
-      margin:1.5em auto 2em auto;
+      margin: 1em auto;
     }
-    .feature{
-      background:#0384CA;
-      height:450px;
+    .form-title{
+      color:white;
+      font-weight:600;
+      margin:0.5em auto;
     }
     .radio-button-container{
       padding: 1em 0.4em;
@@ -263,55 +270,45 @@ export default {
       border-radius:4px;
     }
     .form-wrapper{
-      background:white;
-      width:95%;
-      margin:2em auto;
-      padding:2em 1.5em;
+      width:97%;
+      background:#131f46;
+      max-width: 500px;
+      padding: 1.2em 1.5em 2.5em 1.2em;
       border-radius:3px;
+      position:absolute;
+      left:1.5%;
       box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
       border-radius: 0.375rem;
       transition: all 0.3s ease;
-    }
-    .form-wrapper > .column{
-      font-weight:bold;
-    }
-    #question-container{
-      border:1px solid whitesmoke;
-      padding:1.4em;
-      border-radius:4px;
+      z-index: 100;
       p{
-        font-weight: 600 !important;  
+        font-size:0.8em;
+        opacity:0.9;
+        color:white;
       }
     }
-    h1,h4{
-      color:#442d2d;
-      margin:0 !important;
-      padding:0;
-      text-align: center;
-    }
-    h4{
-      font-weight: 300;
-    }
-    input,select,textarea{
-      background:whitesmoke;
-    }
     .radio{
-      margin-right: 15px;
+      margin-right: 5px;
     }
-    .field{
-      color:#565151;
+    .label{
+      color:white;
     }
     .features{
+      background:white;
+      padding:14em 0 0 0;
+      .section-title{
+        color:#131f46;
+        margin:1.5em auto;
+        text-align:center;
+        font-weight: 600;
+        max-width: 900px;
+      }
       .column{
-        padding:0.8em;
+        padding:1em;
         margin:2em 2em;
         box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
         background:white;
         border-radius:4px;
-      }
-      h1{
-        color:white;
-        margin:0 0 2em 0 !important;
       }
       h3{
         font-size:1.5em;
@@ -321,6 +318,7 @@ export default {
       p{
         opacity:0.9;
         line-height:27px;
+       
       }
     }
     .disclaimer{
@@ -331,4 +329,52 @@ export default {
         margin:0 auto;
       }
     }
+    .card{
+      -webkit-box-shadow:none;
+      box-shadow: none;
+    }
+    
+@media only screen and (min-width: 700px) {
+    .form-wrapper{
+      margin-left:20%;
+    }
+    .hero-title{
+      max-width:500px;
+      width:60%;
+    }
+    .features{
+      background:white;
+      padding:14em 0 0 0;
+    }
+}
+@media only screen and (min-width: 1000px) {
+  .form-wrapper{
+    margin:4em 0;
+  }
+  .hero-title{
+      color:#2d2d2d;
+      position:absolute;
+      left:560px;
+      top:50px;
+      background:none;
+      text-align:left;
+      max-width: 550px;
+    }
+    .features{
+      background:white;
+      padding:0 0 0 0;
+    }
+}
+@media only screen and (min-width: 1300px) {
+  .form-wrapper{
+    margin:4em 0;
+  }
+  .hero-title{
+      left:600px;
+      top:50px;
+      text-align:left;
+      max-width: 650px;
+    }
+}
 </style>
+
